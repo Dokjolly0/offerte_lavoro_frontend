@@ -1,0 +1,41 @@
+<div class="card job-item shadow-sm">
+  <!-- Titolo -->
+  <div class="card-header bg-light">
+    <h5 class="text-primary m-0">{{ job.Titolo }}</h5>
+  </div>
+
+  <!-- Corpo -->
+  <div class="card-body">
+    <p class="mb-1"><strong>Descrizione:</strong> {{ job.DescrizioneBreve }}</p>
+    <p class="mb-1"><strong>Azienda:</strong> {{ job.Azienda }}</p>
+    <p class="mb-1"><strong>Provincia:</strong> {{ job.Provincia }}</p>
+    <p class="mb-1">
+      <strong>Data Inserimento:</strong> {{ job.DataInserimento }}
+    </p>
+    <p class="mb-1">
+      <strong>Smart Working:</strong> {{ job.SmartWorking ? "Sì" : "No" }}
+    </p>
+    <p class="mb-1">
+      <strong>Retribuzione Lorda:</strong> €{{ job.RetribuzioneLorda | number }}
+    </p>
+    <p class="mb-1">
+      <strong>Tipologia Contratto:</strong> {{ job.TipologiaContratto }}
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer d-flex justify-content-between">
+    <button
+      [routerLink]="['/edit-job', job.OffertaLavoroID]"
+      class="btn btn-warning me-2 w-50"
+    >
+      Modifica
+    </button>
+    <button
+      [routerLink]="['/delete-job', job.OffertaLavoroID]"
+      class="btn btn-danger ms-2 w-50"
+    >
+      Elimina
+    </button>
+  </div>
+</div>

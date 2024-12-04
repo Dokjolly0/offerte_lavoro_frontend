@@ -1,0 +1,36 @@
+.job-item {
+  width: 300px; /* Larghezza fissa per card quadrate */
+  height: 300px; /* Altezza fissa */
+  display: flex;
+  flex-direction: column; /* Contenuto distribuito verticalmente */
+  justify-content: space-between; /* Spaziatura uniforme tra header, body e footer */
+  border-radius: 8px; /* Angoli arrotondati */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .card-body {
+    font-size: 0.9rem;
+    color: #6c757d;
+    overflow-y: auto; /* Aggiunge lo scroll verticale se il contenuto eccede */
+  }
+
+  .card-footer {
+    padding: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}

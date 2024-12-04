@@ -1,0 +1,107 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Aggiungi Nuova Offerta di Lavoro</h1>
+  <form (ngSubmit)="addJob()">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Titolo" class="form-label">Titolo</label>
+        <input
+          [(ngModel)]="job.Titolo"
+          name="Titolo"
+          class="form-control"
+          id="Titolo"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="DescrizioneBreve" class="form-label"
+          >Descrizione Breve</label
+        >
+        <input
+          [(ngModel)]="job.DescrizioneBreve"
+          name="DescrizioneBreve"
+          class="form-control"
+          id="DescrizioneBreve"
+          required
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="Azienda" class="form-label">Azienda</label>
+        <input
+          [(ngModel)]="job.Azienda"
+          name="Azienda"
+          class="form-control"
+          id="Azienda"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="Provincia" class="form-label">Provincia</label>
+        <input
+          [(ngModel)]="job.Provincia"
+          name="Provincia"
+          class="form-control"
+          id="Provincia"
+          required
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="DataInserimento" class="form-label">Data Inserimento</label>
+        <input
+          [(ngModel)]="job.DataInserimento"
+          name="DataInserimento"
+          type="date"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="RetribuzioneLorda" class="form-label"
+          >Retribuzione Lorda</label
+        >
+        <input
+          [(ngModel)]="job.RetribuzioneLorda"
+          name="RetribuzioneLorda"
+          class="form-control"
+          id="RetribuzioneLorda"
+          required
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input
+            [(ngModel)]="job.SmartWorking"
+            name="SmartWorking"
+            type="checkbox"
+            class="form-check-input"
+            id="SmartWorking"
+            [ngModelOptions]="{ standalone: true }"
+            (ngModelChange)="job.SmartWorking = $event ? true : false"
+          />
+
+          <label for="SmartWorking" class="form-check-label"
+            >Smart Working</label
+          >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="TipologiaContratto" class="form-label"
+          >Tipologia Contratto</label
+        >
+        <input
+          [(ngModel)]="job.TipologiaContratto"
+          name="TipologiaContratto"
+          class="form-control"
+          id="TipologiaContratto"
+          required
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Aggiungi</button>
+  </form>
+</div>

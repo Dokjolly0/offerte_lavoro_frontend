@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center mb-4">Offerte di Lavoro</h1>
+
+  <!-- Barra di ricerca -->
+  <div class="text-center mb-4">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Cerca offerte di lavoro..."
+      [(ngModel)]="searchText"
+      (keyup)="onSearch()"
+    />
+  </div>
+
+  <!-- Spinner durante il caricamento -->
+  <div *ngIf="isLoading" class="text-center">
+    <p>Caricamento in corso...</p>
+  </div>
+
+  <!-- Lista delle offerte di lavoro -->
+  <div class="d-flex flex-wrap gap-3 justify-content-center" *ngIf="!isLoading">
+    <app-job-item *ngFor="let job of jobs" [job]="job"></app-job-item>
+  </div>
+
+  <!-- Pulsante per aggiungere -->
+  <div class="text-center mt-4">
+    <button routerLink="/add-job" class="btn btn-primary">
+      Aggiungi Offerta di Lavoro
+    </button>
+  </div>
+</div>
